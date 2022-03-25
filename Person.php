@@ -5,13 +5,31 @@ class Person {
 
     public $name;
 
-    public $life = 80;
+    private $life;
 
-    public $atk = 20;
+    private $atk;
 
-    public function __construct($name)
+    public function __construct($name="unkown", $life=100, $atk=20)
     {
         $this->name = $name;
+        $this->life = $life;
+        $this->atk = $atk;
+    }
+
+    public function getLife(){
+        return $this->life;
+    }
+
+    public function setLife($life){
+        $this->life = $life;
+    }
+
+    public function getAtk(){
+        return $this->atk;
+    }
+
+    public function setAtk($atk){
+        $this->atk = $atk;
     }
 
     public function health($points = null){
