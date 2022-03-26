@@ -3,11 +3,11 @@
 
 class Person {
 
-    public $name;
+    protected $name;
 
-    private $life;
+    protected $life;
 
-    private $atk;
+    protected $atk;
 
     public function __construct($name="unkown", $life=100, $atk=20)
     {
@@ -17,6 +17,9 @@ class Person {
     }
 
     public function getLife(){
+        if($this->life < 0){
+            $this->life = 0;
+        }
         return $this->life;
     }
 
